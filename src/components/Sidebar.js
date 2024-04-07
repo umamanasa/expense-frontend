@@ -2,9 +2,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Sidebar = () => {
+const Sidebar = ({ showSidebar }) => {
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${showSidebar ? 'visible' : ''}`}>
       <ul>
         <li>
           <Link to="/">Home</Link>
