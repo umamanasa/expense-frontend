@@ -2,8 +2,8 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div>
-      <img src="path-to-your-image.jpg" alt="Home" />
+    <div className="home-container">
+      <img src="home.png" alt="Home" />
     </div>
   );
 };
