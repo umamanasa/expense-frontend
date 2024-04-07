@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Button, TextField, Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import { Button, TextField, Container, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
 
 const AddExpense = () => {
   const [amount, setAmount] = useState('');
@@ -55,14 +55,20 @@ const AddExpense = () => {
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            style={{ marginRight: '10px' }}
+            style={{ marginRight: '10px', backgroundColor: 'white' }}
+            InputLabelProps={{
+              style: { color: '#757575' },
+            }}
           />
           <TextField
             label="Description"
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            style={{ marginRight: '10px' }}
+            style={{ marginRight: '10px', backgroundColor: 'white' }}
+            InputLabelProps={{
+              style: { color: '#757575' },
+            }}
           />
           <Button variant="contained" color="primary" onClick={handleAdd}>
             Add
