@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import AddExpense from './AddExpense';
+// In App.js
+import Home from './components/Home';
+import AddExpense from './components/AddExpense';
+
 
 const App = () => {
   return (
