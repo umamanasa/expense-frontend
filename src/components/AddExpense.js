@@ -44,48 +44,50 @@ const AddExpense = () => {
   };
 
   return (
-    <Container maxWidth="sm">
-      <Button variant="contained" color="secondary" onClick={handleDelete} style={{ marginBottom: '20px' }}>
-        Delete All
-      </Button>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-        <TextField
-          label="Amount"
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          style={{ marginRight: '10px' }}
-        />
-        <TextField
-          label="Description"
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          style={{ marginRight: '10px' }}
-        />
-        <Button variant="contained" color="primary" onClick={handleAdd}>
-          Add
+    <div className="content">
+      <Container maxWidth="sm">
+        <Button variant="contained" color="secondary" onClick={handleDelete} style={{ marginBottom: '20px' }}>
+          Delete All
         </Button>
-      </div>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Amount</TableCell>
-              <TableCell>Description</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {expenses.map((expense, index) => (
-              <TableRow key={index}>
-                <TableCell>{expense.amount}</TableCell>
-                <TableCell>{expense.description}</TableCell>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+          <TextField
+            label="Amount"
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            style={{ marginRight: '10px' }}
+          />
+          <TextField
+            label="Description"
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            style={{ marginRight: '10px' }}
+          />
+          <Button variant="contained" color="primary" onClick={handleAdd}>
+            Add
+          </Button>
+        </div>
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Amount</TableCell>
+                <TableCell>Description</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Container>
+            </TableHead>
+            <TableBody>
+              {expenses.map((expense, index) => (
+                <TableRow key={index}>
+                  <TableCell>{expense.amount}</TableCell>
+                  <TableCell>{expense.description}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Container>
+    </div>
   );
 };
 
