@@ -1,5 +1,5 @@
 @Library('expense') _
 
 env.codeType = "static"
-env.component = "expense-frontend"
+env.component = "frontend"
 cipipeline()
