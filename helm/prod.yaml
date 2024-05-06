@@ -1,3 +1,28 @@
 component: frontend
 service_type: LoadBalancer
 port: 80
+PARAMETERS: "frontend.prod.appVersion,appVersion"
+schema:
+  enabled: false
+
+replicaCount: 2
+
+recordName: www.manasareddy.online
+ingress:
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: www.manasareddy.online
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 500Mi
+  requests:
+    cpu: 500m
+    memory: 500Mi
+
+
